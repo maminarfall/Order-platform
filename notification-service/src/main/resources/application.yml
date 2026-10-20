@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: notification-service
+aws:
+  region: ${AWS_REGION:us-east-1}
+  endpoint: ${AWS_ENDPOINT:}
+orders:
+  queue-url: ${ORDERS_QUEUE_URL}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true

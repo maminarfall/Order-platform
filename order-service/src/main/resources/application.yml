@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: order-service
+aws:
+  region: ${AWS_REGION:us-east-1}
+  endpoint: ${AWS_ENDPOINT:}
+orders:
+  topic-arn: ${ORDERS_TOPIC_ARN}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true   # /actuator/health/liveness and /readiness for Kubernetes
