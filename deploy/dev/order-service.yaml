@@ -1,0 +1,14 @@
+# Replace the 3 CHANGE-ME values with your `terraform output` values
+image:
+  repository: 605262305897.dkr.ecr.us-east-1.amazonaws.com/order-service
+  tag: v3
+
+serviceAccount:
+  roleArn: arn:aws:iam::605262305897:role/order-platform-dev-order-service
+
+env:
+  AWS_REGION: us-east-1
+  ORDERS_TOPIC_ARN:  arn:aws:sns:us-east-1:605262305897:order-platform-dev-order-created
+
+ingress:
+  enabled: true

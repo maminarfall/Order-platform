@@ -1,0 +1,13 @@
+# Replace the 3 CHANGE-ME values with your `terraform output` values
+replicaCount: 1
+
+image:
+  repository: 605262305897.dkr.ecr.us-east-1.amazonaws.com/notification-service
+  tag: v3
+
+serviceAccount:
+  roleArn: arn:aws:iam::605262305897:role/order-platform-dev-notification-service
+
+env:
+  AWS_REGION: us-east-1
+  ORDERS_QUEUE_URL: "https://sqs.us-east-1.amazonaws.com/605262305897/order-platform-dev-order-events"

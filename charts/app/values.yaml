@@ -1,0 +1,27 @@
+# Defaults. Each service overrides these in deploy/dev/<service>.yaml
+replicaCount: 2
+
+image:
+  repository: ""        # ECR repo URL
+  tag: "v1"
+  pullPolicy: IfNotPresent
+
+serviceAccount:
+  roleArn: ""           # IAM role from Terraform output (IRSA)
+
+env: {}                 # extra environment variables
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 512Mi
+  limits:
+    memory: 768Mi
+
+service:
+  port: 80
+
+ingress:
+  enabled: false
+  className: traefik
+  path: /api/orders
